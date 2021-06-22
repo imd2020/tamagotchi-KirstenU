@@ -1,0 +1,10 @@
+body {
+  background-image: url(riesling.png);
+}
+
+canvas {
+  display: block;
+  margin-top: 150px;
+  margin-left: auto;
+  margin-right: auto;
+}
