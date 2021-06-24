@@ -8,18 +8,30 @@ export default class Button {
   constructor(x, y) {
     this.x = x;
     this.y = y;
-    this.Rainbutton = loadImage("/Regen-Button.png");
-    this.Sunbutton = loadImage("/Sonne-Button.png");
-    this.startbutton = loadImage("/StartButton.png");
-    this.tutorialbutton = loadImage("/Tutorialbutton.png");
-    this.abrupfen = loadImage("/Blaetter-abrupfen.png");
-    this.dranlassen = loadImage("/Blaetter-dranlassen.png");
+    this.Rainbutton = loadImage("pictures/Regen-Button.png");
+    this.Sunbutton = loadImage("pictures/Sonne-Button.png");
+    this.startbutton = loadImage("pictures/StartButton.png");
+    this.tutorialbutton = loadImage("pictures/Tutorialbutton.png");
+    this.abrupfen = loadImage("pictures/Blaetter-abrupfen.png");
+    this.dranlassen = loadImage("pictures/Blaetter-dranlassen.png");
   }
   displaystart() {
     image(this.startbutton, this.x, this.y, 120, 50);
+    gsap.to(this, {
+      delay: 2,
+      duration: 1,
+      ease: "EaseIn",
+      y: 410,
+    });
   }
   displaytutorial() {
     image(this.tutorialbutton, this.x, this.y, 120, 50);
+    gsap.to(this, {
+      delay: 2,
+      duration: 1,
+      ease: "EaseIn",
+      y: 410,
+    });
   }
   displayregen() {
     image(this.Rainbutton, this.x, this.y, 120, 50);
@@ -41,6 +53,7 @@ export default class Button {
       mouseY >= this.y &&
       mouseY <= this.y + 50
     ) {
+      return true;
     }
   }
   hitTestSun() {

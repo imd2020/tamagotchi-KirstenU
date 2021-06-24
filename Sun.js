@@ -4,16 +4,34 @@ export default class Sun {
     push();
     noStroke();
     fill(250, 200, 0);
-    ellipse(150, 150, 150);
-    //+60 +50
+    translate(this.x, this.y);
+    rotate(this.rotation);
+    ellipse(0, 0, 150);
     stroke(250, 200, 0);
     strokeWeight(5);
-    line(240, 150, 290, 150);
-    line(220, 210, 260, 240);
-    line(160, 240, 160, 280);
-    line(90, 220, 70, 250);
-    line(60, 185, 25, 210);
-    line(270, 80, 230, 100);
+    line(120, -70, 80, -50);
+    line(90, 0, 140, 0);
+    line(70, 60, 110, 90);
+    line(10, 90, 10, 130);
+    line(-50, 70, -70, 100);
+    line(-80, 35, -115, 60);
     pop();
+    gsap.to(this, {
+      duration: 1,
+      ease: "EaseIn",
+      x: 200,
+      y: 200,
+      onComplete: () => {
+        gsap.to(this, {
+          duration: 2,
+          ease: "EaseIn",
+          rotation: 6.5,
+          x: 200,
+          onComplete: () => {
+            myAnimation();
+          },
+        });
+      },
+    });
   }
 }

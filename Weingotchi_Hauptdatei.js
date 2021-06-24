@@ -12,7 +12,7 @@ let variable1 = 0;
 let variable2 = 0;
 let background = new Background();
 let backbackground = new Backbackground();
-let hauptrebe = new Rebe(550, 100);
+let hauptrebe = new Rebe(501, 100);
 let sunButton = new Button(50, 400);
 let rainButton = new Button(200, 400);
 let vineground = new Vine();
@@ -22,8 +22,8 @@ let leave = new Leave();
 let state = "start";
 let startbackground = new StartandEnd();
 let endbackground = new StartandEnd();
-let startButton = new Button(380, 410);
-let tutorialButton = new Button(530, 410);
+let startButton = new Button(380, 500);
+let tutorialButton = new Button(530, 500);
 let secondstartButton = new Button(600, 410);
 let leaveOnButton = new Button(90, 220);
 let takeOffButton = new Button(220, 220);
@@ -212,7 +212,6 @@ function leaves() {
 
 function complete() {
   backbackground.displayback();
-  mousePressed();
   hauptrebe.display();
   vineground.display();
   vineheartleft.displayleft();

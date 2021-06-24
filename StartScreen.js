@@ -1,9 +1,9 @@
 export default class StartandEnd {
   constructor() {
-    this.picturestart = loadImage("/StartScreen.png");
-    this.pictureendbad = loadImage("/Background-final.png");
-    this.pictureendgood = loadImage("/Background-final_vino.png");
-    this.picturetutorial = loadImage("/Tutorialscreen.png");
+    this.picturestart = loadImage("pictures/StartScreen.png");
+    this.pictureendbad = loadImage("pictures/Background-Final.png");
+    this.pictureendgood = loadImage("pictures/Background-Final_vino.png");
+    this.picturetutorial = loadImage("pictures/Tutorialscreen.png");
   }
   displaystart() {
     image(this.picturestart, 0, 0, 800, 500);
