@@ -1,3 +1,4 @@
+//Regen mit Animation
 export default class Rain {
   constructor() {}
   display() {
@@ -19,6 +20,8 @@ export default class Rain {
     rect(20, 140 + this.fall * 1.2, 5, 40 * this.smaller, 10);
     rect(70, 60 + this.fall * 1.8, 5, 40 * this.smaller, 10);
     pop();
+    //Easet rein auf den Punkt 350/150 mit anfänglicher Regentropfen Größe
+    //anschließend fällt Regen linear runter und wird kleiner
     gsap.to(this, {
       duration: 1,
       ease: "EaseIn",

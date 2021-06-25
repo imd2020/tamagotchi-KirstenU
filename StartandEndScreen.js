@@ -1,3 +1,4 @@
+//Start-/ Endscreens und Tutorial
 export default class StartandEnd {
   constructor() {
     this.picturestart = loadImage("pictures/StartScreen.png");

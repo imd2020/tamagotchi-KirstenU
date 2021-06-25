@@ -1,3 +1,4 @@
+//Sonne mit Animation
 export default class Sun {
   constructor() {}
   display() {
@@ -16,6 +17,7 @@ export default class Sun {
     line(-50, 70, -70, 100);
     line(-80, 35, -115, 60);
     pop();
+    //Sonne Easet ein auf den Punkt 200/200 und dreht sich anschließend auf dem gleichen Punkt
     gsap.to(this, {
       duration: 1,
       ease: "EaseIn",
@@ -27,9 +29,6 @@ export default class Sun {
           ease: "EaseIn",
           rotation: 6.5,
           x: 200,
-          onComplete: () => {
-            myAnimation();
-          },
         });
       },
     });

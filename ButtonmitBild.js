@@ -1,3 +1,4 @@
+//Import, um Sonne und Regen bei drücken auf Button zu zeichnen
 import Sun from "./Sun.js";
 let shining = new Sun();
 
@@ -16,6 +17,7 @@ export default class Button {
     this.dranlassen = loadImage("pictures/Blaetter-dranlassen.png");
   }
   displaystart() {
+    //Startbutton mit Animation, Startscreen
     image(this.startbutton, this.x, this.y, 120, 50);
     gsap.to(this, {
       delay: 2,
@@ -25,6 +27,7 @@ export default class Button {
     });
   }
   displaytutorial() {
+    //Tutorialbutton mit Animation, Startscreen
     image(this.tutorialbutton, this.x, this.y, 120, 50);
     gsap.to(this, {
       delay: 2,
@@ -34,15 +37,19 @@ export default class Button {
     });
   }
   displayregen() {
+    //Regenbutton GameScreen
     image(this.Rainbutton, this.x, this.y, 120, 50);
   }
   displaysonne() {
+    //Sonnenbutton GameScreen
     image(this.Sunbutton, this.x, this.y, 120, 50);
   }
   displayab() {
+    //Finale Entscheidung abrupfen Button
     image(this.abrupfen, this.x, this.y, 120, 50);
   }
   displaydran() {
+    //Finale Entscheidung dranlassen Button
     image(this.dranlassen, this.x, this.y, 120, 50);
   }
   hitTest() {
@@ -57,7 +64,7 @@ export default class Button {
     }
   }
   hitTestSun() {
-    //Hier wird Sonne gezeichnet
+    //Hier wird Sonne gezeichnet, aus Import
     if (
       mouseX >= this.x &&
       mouseX <= this.x + 120 &&
@@ -68,8 +75,7 @@ export default class Button {
     }
   }
   hitTestRain() {
-    //Hier wird Regen gezeichnet
-
+    //Hier wird Regen gezeichnet, aus Import
     if (
       mouseX >= this.x &&
       mouseX <= this.x + 120 &&

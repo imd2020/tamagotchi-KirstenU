@@ -1,3 +1,4 @@
+//noramler Hintergrund, kommt aber hinter den ersten Hintergrund
 export default class Backbackground {
   constructor() {
     this.picture2 = loadImage("pictures/Background.png");

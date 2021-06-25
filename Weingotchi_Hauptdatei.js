@@ -6,29 +6,34 @@ import Rebe from "./Rebe.js";
 import Vine from "./Vine.js";
 import VinePieces from "./Vinepieces.js";
 import Leave from "./Leaves.js";
-import StartandEnd from "./StartScreen.js";
+import StartandEnd from "./StartandEndScreen.js";
 
-let variable1 = 0;
-let variable2 = 0;
+//Hintergrund
 let background = new Background();
 let backbackground = new Backbackground();
+let startbackground = new StartandEnd();
+let endbackground = new StartandEnd();
+//Rebstücke
 let hauptrebe = new Rebe(501, 100);
-let sunButton = new Button(50, 400);
-let rainButton = new Button(200, 400);
 let vineground = new Vine();
 let vineheartleft = new VinePieces();
 let vineheartright = new VinePieces();
 let leave = new Leave();
-let state = "start";
-let startbackground = new StartandEnd();
-let endbackground = new StartandEnd();
+//Buttons
+let sunButton = new Button(50, 400);
+let rainButton = new Button(200, 400);
 let startButton = new Button(380, 500);
 let tutorialButton = new Button(530, 500);
 let secondstartButton = new Button(600, 410);
 let leaveOnButton = new Button(90, 220);
 let takeOffButton = new Button(220, 220);
+//Sonstiges
+let variable1 = 0;
+let variable2 = 0;
+let state = "start";
 
 function diagram() {
+  //Beschriftung für das Diagramm
   push();
   noStroke();
   fill(0, 0, 200);
@@ -96,6 +101,7 @@ function mousePressed() {
 window.mousePressed = mousePressed;
 
 function startscreen() {
+  //StartScreen mit zwei Buttons und Bildern
   startbackground.displaystart();
   startButton.displaystart();
   tutorialButton.displaytutorial();
@@ -123,6 +129,7 @@ function startscreen() {
 }
 
 function tutorialscreen() {
+  //Tutorialscreen mit verschobenem StartButton
   startbackground.displaytutorial();
   secondstartButton.displaystart();
 
@@ -139,6 +146,8 @@ function tutorialscreen() {
 }
 
 function gamescreenstart() {
+  //GameScreen mit Rebstock, Hintergrund, Buttons und Diagramm
+  //Zwei Hintergründe wegen Lochmuster bei Diagramm
   backbackground.displayback();
   mousePressed();
   background.display();
@@ -146,6 +155,7 @@ function gamescreenstart() {
   sunButton.displaysonne();
   rainButton.displayregen();
   hauptrebe.display();
+  //wenn beide auf einem Punkt sind werden die Diagrammbalken auf 0 gesetzt und nächster State kommt
   if (variable1 > 70 && variable2 > 70 && state === "game") {
     variable1 = 0;
     variable2 = 0;
@@ -161,6 +171,7 @@ function gamescreenstart() {
 }
 
 function vinePieceatground() {
+  //erster gewachsener Abschnitt, Bodenrebe wird displayt
   backbackground.displayback();
   mousePressed();
   background.display();
@@ -185,6 +196,7 @@ function vinePieceatground() {
 }
 
 function leaves() {
+  //vorletzter Screen, hier "wachsen" nurnoch die Blätter
   backbackground.displayback();
   mousePressed();
   background.display();
@@ -211,6 +223,9 @@ function leaves() {
 }
 
 function complete() {
+  //Rebe ist komplett gewachsen
+  //Diagramm und Buttons ausgeblendet
+  //Entscheidungsfrage nach Ertragsarbeit (Blätter ab oder dran)
   backbackground.displayback();
   hauptrebe.display();
   vineground.display();
@@ -247,14 +262,16 @@ function complete() {
 }
 
 function finalScreenbad() {
+  //Finalscreen Traubensaft
   endbackground.displayendbad();
 }
 function finalScreengood() {
+  //Finalscreen Wein
   endbackground.displayendgood();
 }
 
 function draw() {
-  //STATES
+  //STATES Wechsel
   if (state === "start") {
     startscreen();
   } else if (state === "game") {

@@ -1,3 +1,4 @@
+//Rebstock neu gemalt
 export default class Rebe {
   constructor(x, y) {
     this.x = x;

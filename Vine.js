@@ -1,3 +1,4 @@
+//erstes Teilstück der Rebe
 export default class Vine {
   constructor() {
     this.picture = loadImage("pictures/Rebe-Boden.png");
