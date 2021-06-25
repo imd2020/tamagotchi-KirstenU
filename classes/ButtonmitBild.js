@@ -1,5 +1,5 @@
 //Import, um Sonne und Regen bei drücken auf Button zu zeichnen
-import Sun from "./Sun.js";
+import Sun from ".//Sun.js";
 let shining = new Sun();
 
 import Rain from "./Rain.js";

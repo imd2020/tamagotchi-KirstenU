@@ -1,12 +1,12 @@
 // IMPORTS aus anderen Dateien
-import Button from "./ButtonmitBild.js";
-import Background from "./Hintergrund.js";
-import Backbackground from "./Hintergrund2.js";
-import Rebe from "./Rebe.js";
-import Vine from "./Vine.js";
-import VinePieces from "./Vinepieces.js";
-import Leave from "./Leaves.js";
-import StartandEnd from "./StartandEndScreen.js";
+import Button from "./classes/ButtonmitBild.js";
+import Background from "./classes/Hintergrund.js";
+import Backbackground from "./classes/Hintergrund2.js";
+import Rebe from "./classes/Rebe.js";
+import Vine from "./classes/Vine.js";
+import VinePieces from "./classes/Vinepieces.js";
+import Leave from "./classes/Leaves.js";
+import StartandEnd from "./classes/StartandEndScreen.js";
 
 //Hintergrund
 let background = new Background();
